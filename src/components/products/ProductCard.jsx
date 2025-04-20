@@ -13,11 +13,14 @@ const ProductCard = ({ product }) => {
 
   return (
     <Card className="overflow-hidden h-full card-hover">
-      <div className="relative h-40 overflow-hidden">
+      <div className="relative h-36 overflow-hidden"> {/* Reduced height from 40 to 36 */}
         <img 
           src={product.image} 
           alt={product.name} 
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105 transform scale-100"
+          loading="lazy" // Add lazy loading
+          width={300}    // Specify width
+          height={144}   // Specify height
         />
         {!product.inStock && (
           <div className="absolute inset-0 bg-black/60 flex items-center justify-center">

@@ -6,11 +6,14 @@ const StoreCard = ({ store }) => {
   return (
     <Link to={`/store/${store.id}`}>
       <Card className="overflow-hidden h-full card-hover">
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-40 overflow-hidden"> {/* Reduced height from 48 to 40 */}
           <img 
             src={store.image} 
             alt={store.name} 
-            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105 transform scale-100"
+            loading="lazy" // Add lazy loading
+            width={300}    // Specify width
+            height={160}   // Specify height
           />
           <div className="absolute top-2 right-2 bg-white/90 text-store-text rounded-full px-2 py-1 text-sm font-medium">
             ⭐ {store.rating}
