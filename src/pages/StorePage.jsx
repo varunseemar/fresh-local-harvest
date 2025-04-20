@@ -42,8 +42,8 @@ const StorePage = () => {
         <div className="animate-pulse">
           <div className="h-10 w-1/3 bg-gray-200 rounded mb-4"></div>
           <div className="h-6 w-1/2 bg-gray-200 rounded mb-8"></div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
               <div key={i} className="h-64 bg-gray-200 rounded-lg"></div>
             ))}
           </div>
@@ -94,7 +94,7 @@ const StorePage = () => {
         {products.length === 0 ? (
           <p>No products available at this store.</p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
